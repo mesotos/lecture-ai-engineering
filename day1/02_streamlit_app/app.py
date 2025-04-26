@@ -51,7 +51,7 @@ st.write("Gemmaモデルを使用したチャットボットです。回答に�
 st.markdown("---")
 
 # --- サイドバー ---
-st.sidebar.title("ナビゲーション")
+st.sidebar.title("ナビゲーション🧭")
 # セッション状態を使用して選択ページを保持
 if 'page' not in st.session_state:
     st.session_state.page = "チャット" # デフォルトページ
@@ -67,13 +67,16 @@ page = st.sidebar.radio(
 
 # --- メインコンテンツ ---
 if st.session_state.page == "チャット":
+    st.header("チャット 💬")
     if pipe:
         ui.display_chat_page(pipe)
     else:
         st.error("チャット機能を利用できません。モデルの読み込みに失敗しました。")
 elif st.session_state.page == "履歴閲覧":
+    st.header("履歴閲覧 📜")
     ui.display_history_page()
 elif st.session_state.page == "サンプルデータ管理":
+    st.header("サンプルデータ管理🗃️")
     ui.display_data_page()
 
 # --- フッターなど（任意） ---
